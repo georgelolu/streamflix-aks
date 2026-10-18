@@ -1,4 +1,3 @@
-
 name: StreamFlix AKS CI/CD
 
 on:
@@ -37,6 +36,10 @@ jobs:
 
       - name: Set up kubelogin
         uses: azure/use-kubelogin@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          kubelogin-version: "v0.2.18"
 
       - name: Authenticate to Azure Container Registry
         run: az acr login --name "${{ vars.ACR_NAME }}"
@@ -47,8 +50,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           set -euo pipefail
-          docker build \
-            --pull \
+          docker build --pull \
             -t "$REGISTRY/streamflix:$IMAGE_TAG" \
             ./website
 
@@ -70,7 +72,6 @@ jobs:
             --resource-group "$RESOURCE_GROUP" \
             --name "$CLUSTER_NAME" \
             --overwrite-existing
-
           kubelogin convert-kubeconfig -l azurecli
 
       - name: Verify namespace permissions
@@ -100,7 +101,5 @@ jobs:
           kubectl rollout status deployment/streamflix \
             -n streamflix \
             --timeout=180s
-
           kubectl get deployment streamflix -n streamflix
           kubectl get pods -n streamflix
-
