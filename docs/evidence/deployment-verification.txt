@@ -1,26 +1,24 @@
 ==================================================
 StreamFlix AKS Deployment Verification
 ==================================================
-Collected (UTC): 2026-10-18 15:29:49
+Collected (UTC): 2026-10-18 15:39:31
 Repository: https://github.com/georgelolu/streamflix-aks.git
-Commit: 32ba91f5634e3a52ee8ce0d9ee9a5fb7fe7ec53d
+Commit: 68aaf04badcb08433f516d9b3e2c15aacbfb5c37
 
 ===== Git working tree =====
 ## main...origin/main
- M docs/evidence/README.md
-?? docs/evidence/collect-evidence.sh
-?? docs/evidence/deployment-verification.txt
+ M docs/evidence/deployment-verification.txt
 
 ===== Kubernetes context =====
 pet-clinic-aks
 
 ===== Namespace =====
 NAME         STATUS   AGE
-streamflix   Active   4h6m
+streamflix   Active   4h15m
 
 ===== Deployment =====
-NAME         READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES                                                                            SELECTOR
-streamflix   2/2     2            2           4h6m   streamflix   petclinicacr3595.azurecr.io/streamflix:b0aa02db5fb1642134c35694f85b380e9f63fe2b   app=streamflix
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                                            SELECTOR
+streamflix   2/2     2            2           4h15m   streamflix   petclinicacr3595.azurecr.io/streamflix:b0aa02db5fb1642134c35694f85b380e9f63fe2b   app=streamflix
 
 ===== Rollout status =====
 deployment "streamflix" successfully rolled out
@@ -30,12 +28,12 @@ petclinicacr3595.azurecr.io/streamflix:b0aa02db5fb1642134c35694f85b380e9f63fe2b
 
 ===== Pods =====
 NAME                          READY   STATUS    RESTARTS   AGE   IP            NODE                                NOMINATED NODE   READINESS GATES
-streamflix-64b4b874bc-n942w   1/1     Running   0          86m   10.224.0.13   aks-nodepool1-33760875-vmss000001   <none>           <none>
-streamflix-64b4b874bc-r55cc   1/1     Running   0          86m   10.224.0.9    aks-nodepool1-33760875-vmss000001   <none>           <none>
+streamflix-64b4b874bc-n942w   1/1     Running   0          96m   10.224.0.13   aks-nodepool1-33760875-vmss000001   <none>           <none>
+streamflix-64b4b874bc-r55cc   1/1     Running   0          96m   10.224.0.9    aks-nodepool1-33760875-vmss000001   <none>           <none>
 
 ===== Service =====
-NAME         TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE    SELECTOR
-streamflix   ClusterIP   10.0.129.61   <none>        80/TCP    4h6m   app=streamflix
+NAME         TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE     SELECTOR
+streamflix   ClusterIP   10.0.129.61   <none>        80/TCP    4h15m   app=streamflix
 
 ===== Application health endpoint =====
 healthy
