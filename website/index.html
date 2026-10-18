@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="StreamFlix — a cloud-native streaming UI and Azure Kubernetes portfolio project.">
+  <title>StreamFlix | Discover Your Next Story</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">STREAMFLIX<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#featured">Discover</a>
+      <a href="#catalog">Explore</a>
+      <a href="#about">About</a>
+    </nav>
+    <span class="status"><span></span> Cloud demo</span>
+  </header>
+
+  <main>
+    <section class="hero" id="featured">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR NEXT FAVORITE STORY</p>
+        <h1>Stories worth<br>staying in for.</h1>
+        <p class="intro">
+          Explore a cinematic collection of adventure, drama,
+          science fiction and unforgettable stories.
+        </p>
+        <a class="primary-button" href="#catalog">Explore collection →</a>
+        <p class="hero-note">A cloud-native streaming interface demo</p>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HANDPICKED FOR YOU</p>
+          <h2>Explore the collection</h2>
+        </div>
+        <input id="search" type="search"
+               placeholder="Search titles..."
+               aria-label="Search titles">
+      </div>
+
+      <div class="filters" aria-label="Filter by genre">
+        <button class="filter active" data-genre="All">All</button>
+        <button class="filter" data-genre="Adventure">Adventure</button>
+        <button class="filter" data-genre="Drama">Drama</button>
+        <button class="filter" data-genre="Sci-Fi">Sci-Fi</button>
+      </div>
+
+      <div class="grid" id="movie-grid">
+        <article class="movie" data-title="Beyond the Horizon"
+                 data-genre="Adventure">
+          <div class="poster poster-one"><span>01 / ADVENTURE</span></div>
+          <div class="movie-info">
+            <h3>Beyond the Horizon</h3><p>Adventure · 2026</p>
+          </div>
+        </article>
+        <article class="movie" data-title="The Last Signal"
+                 data-genre="Sci-Fi">
+          <div class="poster poster-two"><span>02 / SCI-FI</span></div>
+          <div class="movie-info">
+            <h3>The Last Signal</h3><p>Sci-Fi · 2026</p>
+          </div>
+        </article>
+        <article class="movie" data-title="Midnight Letters"
+                 data-genre="Drama">
+          <div class="poster poster-three"><span>03 / DRAMA</span></div>
+          <div class="movie-info">
+            <h3>Midnight Letters</h3><p>Drama · 2025</p>
+          </div>
+        </article>
+        <article class="movie" data-title="Wild Frontier"
+                 data-genre="Adventure">
+          <div class="poster poster-four"><span>04 / ADVENTURE</span></div>
+          <div class="movie-info">
+            <h3>Wild Frontier</h3><p>Adventure · 2025</p>
+          </div>
+        </article>
+        <article class="movie" data-title="Parallel Worlds"
+                 data-genre="Sci-Fi">
+          <div class="poster poster-five"><span>05 / SCI-FI</span></div>
+          <div class="movie-info">
+            <h3>Parallel Worlds</h3><p>Sci-Fi · 2026</p>
+          </div>
+        </article>
+        <article class="movie" data-title="A Quiet Promise"
+                 data-genre="Drama">
+          <div class="poster poster-six"><span>06 / DRAMA</span></div>
+          <div class="movie-info">
+            <h3>A Quiet Promise</h3><p>Drama · 2025</p>
+          </div>
+        </article>
+      </div>
+      <p id="empty-state" hidden>No titles match your search.</p>
+    </section>
+
+    <section class="about" id="about">
+      <p class="eyebrow">BUILT FOR THE CLOUD</p>
+      <h2>One application. Multiple replicas. Automated delivery.</h2>
+      <p>
+        StreamFlix is a portfolio demonstration of containerization,
+        Kubernetes orchestration, secure CI/CD and cloud monitoring
+        using Microsoft Azure.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#">STREAMFLIX<span>.</span></a>
+    <p>Independent portfolio project · Not affiliated with Netflix</p>
+    <a href="https://github.com/georgelolu/streamflix-aks">
+      View source on GitHub
+    </a>
+  </footer>
+</body>
+</html>
